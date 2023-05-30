@@ -1,6 +1,7 @@
 /* ================= GOOGLE FONTS =================== */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=League+Gothic&family=Montserrat:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;900&display=swap');
 
 /* ============== VARIABLES CSS ================== */
 
@@ -19,10 +20,11 @@
     --circle-store-alt: hsl(194,44%,56%);
     --icon-store: hsl(198,54%,36%);
     --icon-store-alt: hsl(198,54%,26%);
+    --text-color-light: hsl(198, 13%, 61%);
 
     /* ============= Fonts ============= */
-    --body-font: "Lato";
-    --nav-font: 'Lato', sans-serif;
+    --body-font: "Lato", sans-serif;
+    --nav-font: 'Lato';
     --title-font: "Montserrat";
     --subtitle-font: "League Gothic";
 
@@ -128,6 +130,8 @@
     padding-block: 5rem 1rem;
     /* line-height: 0; */
   }
+
+  
   
   .section__title {
     font-size: var(--h1-font-size);
@@ -235,20 +239,23 @@
     display: flex;
   }
 
-  .nav__link{
+  /* .nav__link{
     flex-direction: column;
     align-items: center;
     row-gap: 4px;
     color: var(--title-color);
     font-weight: bold;
-  }
+  } */
 
   .nav__list{
+    position: relative;
+    top: 10px;
     justify-content: space-around;
   }
 
   .nav__name{
-    font-family: var(--nav-font);
+    font-family: 'Lato';
+    font-weight: 900;
     text-transform: uppercase;
   }
 
@@ -261,12 +268,16 @@
   /*Active link*/
   .active-link {
     position: relative;
-    color: var(--first-color);
+    color: var(--text-color);
     transition: .3s;
+  }
+
+  .active-link:hover{
+    color: var(--first-color);
   }
   
   /* Minimalist design, active link  */
-   .active-link::before{
+   /* .active-link::before{
     content: '';
     position: absolute;
     bottom: -.5rem;
@@ -275,7 +286,7 @@
     height: 4px;
     background-color: var(--first-color);
     border-radius: 50%;
-  } 
+  }  */
   
   /* Change background header */
   .scroll-header {
@@ -332,7 +343,7 @@
     }
   
     /* First design, remove if you choose the minimalist design */
-    .active-link::before {
+    /* .active-link::before {
       content: '';
       position: absolute;
       bottom: -.75rem;
@@ -340,7 +351,7 @@
       height: 4px;
       background-color: var(--first-color);
       border-radius: 50%;
-    }
+    } */
   
     /* Minimalist design */
      .active-link::before{
@@ -378,7 +389,9 @@
   .home__images{
     position: relative; 
     display: flex;
-    justify-content: right; 
+    justify-content: center;
+    align-items: center;
+    /* justify-content: right;  */
     
   }
 
@@ -388,23 +401,24 @@
     position: absolute;
     width: 313px;
     z-index: 5;
-    top: 35%;
-    right: -1%;
+    left: 60%;
+    bottom: -8%;
   }
 
   .teclado{
     position: absolute;
     width: 350px;
     z-index: 4;
-    right: -12%;
-    top: 4%;
+    left: 70%;
+    bottom: 17%;
   }
 
   .laptop{
     position: absolute;
     width: 366px;
     z-index: 3;
-    right: 14%;
+    left: 44%;
+    bottom: 25%;
   }
   
   .elipse{
@@ -412,7 +426,8 @@
     z-index: 1;
     width: 473px;
     opacity: 0.6;
-    right: -4%;
+    right: 1%;
+    /* transform: translate(50px,500px); */
   }
 
 
@@ -420,14 +435,14 @@
     position: relative;
     z-index: 2;
     width: 537px;
-    right: -65px;
-    top: -40px;
+    right: -25%;
     
   }
 
   .home__data{
     position: relative;
-    transform: translate(40px,-470px);
+    top: -130%;
+    /* transform: translate(-50px,470px); */
   }
 
   .home__description{
@@ -621,12 +636,13 @@
 
   .content .left-side .details .topic{
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .content .left-side .details .text-one,
   .content .left-side .details .text-two{
     font-size: 14px;
+    font-weight: 600;
     color: #afafb6;
   }
 
@@ -634,6 +650,10 @@
     font-size: 20px;
     font-weight: 600;
     color: var(--first-color);
+  }
+
+  .content .right-side > p{
+    font-weight: 600;
   }
 
   .right-side .input-box{
@@ -785,6 +805,7 @@
   .category_cards h3{
     font-size: .9rem;
     margin-top: 10px;
+    font-weight: 900;
     display: grid;
     place-items: center;
   }
@@ -813,7 +834,241 @@
     /* transform: translateX(10%) rotate(45deg);  */
   }
   
+  /* ============ FOOTER =============== */
+  .footer{
+    position: relative;
+    padding-block: 3rem 2rem;
+    overflow: hidden;
+  }
+  
+  .footer__container{
+    row-gap: 3rem;
+  }
+  
+  .footer__logo{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    color: var(--title-color);
+    font-family: var(--title-font);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 1rem;
+    transition: color .3s;
+  }
+  
+  .footer__logo img{
+    width: 25px;
+  }
+  
+  .footer__logo:hover{
+    color: var(--first-color);
+  }
+  
+  .footer__description,
+  .footer__link,
+  .footer__information{
+    font-size: var(--small-font-size);
+    
+  }
+
+  .footer__description,
+  .footer__information{
+    color: var(--text-color);
+    font-weight: 300;
+  }
   
   
+  
+  .footer__content,
+  .footer__links{
+    display: grid;
+  }
+  
+  .footer__content{
+    grid-template-columns: repeat(2,max-content);
+    gap: 2.5rem;
+  }
+  
+  .footer__title{
+    font-size: var(--h3-font-size);
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer__links{
+    row-gap: .5rem;
+  }
+  
+  .footer__link{
+    color: var(--text-color);
+    transition: color .3s;
+  }
+  
+  .footer__link:hover{
+    color: var(--first-color);
+  }
+  
+  .footer__social{
+    display: flex;
+    column-gap: 1.25rem;
+  }
+  
+  .footer__social-links{
+    color: var(--first-color);
+    font-size: 1.25rem;
+    transition: color .3s, transform .3s;
+  }
+  
+  .footer__social-links:hover{
+    color: var(--first-color-alt);
+    transform: translateY(-2px);
+  }
+
+  .footer__info,
+  .footer__card{
+    display: flex;
+  }
+  
+  .footer__info{
+    margin-top: 6.5rem;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  
+  .footer__card{
+    column-gap: 1rem;
+    justify-content: center;
+  }
+  
+  .footer__card img{
+    width: 35px;
+  }
+  
+  .footer__copy{
+    text-align: center;
+    font-size: var(--smaller-font-size);
+    font-weight: 400;
+    color: var(--text-color-light);
+  }
+  
+
+  /* ============= RESPONSIVE DESIGN ================= */
+
+  /* SMARTPHONE */
+
+  @media screen and (max-width: 767px){
+    .nav__list{
+      top: 5px;
+    }
+    .nav__image{
+      position: relative;
+      top: -5px;
+    }
+
+    .mouse{
+      width: 150px;
+      /* top: 20%; */
+      bottom: -15%;
+      left: 35%;
+    }
+
+    .headset{
+      width: 60%;
+      top: -15%;
+      right: 25%;
+    }
+
+    .microfono{
+      width: 80%;
+      top:5%;
+      right: 5%;
+    }
+
+    .monitor{
+      width: 55%;
+      top: -5%;
+      right: 14%;
+    }
+
+    .elipse{
+      width: 70%;
+      right: 10%;
+    }
+
+    .elipse_2{
+      width: 70%;
+      right: -5%;
+    }
+
+    .letras_powerboost_2{
+      width: 85%;
+      right: -25%;
+    }
+
+    .letras_powerboost{
+      width: 85%;
+      right:-7%;
+    }
+
+    .laptop{
+      width: 50%;
+      left: 12%;
+      top: 5%;
+    }
+
+    .teclado{
+      width: 50%;
+      left: 47%;
+    }
+
+    .home__title{
+      font-size: 1.5rem;
+    }
+
+    .home__description{
+      font-size: .8rem;
+    }
+
+    .home__data{
+      top: -22%;
+      right: -24%;
+    }
+
+    .about__data{
+      left: -60%;
+    }
+
+    .about__data h1{
+      font-size: 1.5rem;
+      
+    }
+
+    .home__images{
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: -20%;
+      left: -5%;
+      
+    }
+
+    .about__images{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    
+
+
+
+
+    .home__data{
+      position: relative;
+    }
+  }
   
   
