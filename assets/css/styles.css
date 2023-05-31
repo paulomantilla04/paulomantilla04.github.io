@@ -187,7 +187,7 @@
 /* =============== NAV ================ */
 
 .nav{
-    height: var(--header-height);
+    /* height: var(--header-height); */
     top: 0;
     left: 0;
     width: 100%;
@@ -222,7 +222,7 @@
     }
 
     .icon__nav{
-        font-size: 1.85rem;
+        font-size: 1.5rem;
         position: relative;
         top: 10px;
     }
@@ -232,6 +232,7 @@
     } 
     
     
+    
   }
 
   .nav__list,
@@ -239,13 +240,13 @@
     display: flex;
   }
 
-  /* .nav__link{
+  .nav__link{
     flex-direction: column;
     align-items: center;
     row-gap: 4px;
     color: var(--title-color);
     font-weight: bold;
-  } */
+  }
 
   .nav__list{
     position: relative;
@@ -255,6 +256,7 @@
 
   .nav__name{
     font-family: 'Lato';
+    
     font-weight: 900;
     text-transform: uppercase;
   }
@@ -268,7 +270,7 @@
   /*Active link*/
   .active-link {
     position: relative;
-    color: var(--text-color);
+    color: var(--first-color);
     transition: .3s;
   }
 
@@ -277,7 +279,7 @@
   }
   
   /* Minimalist design, active link  */
-   /* .active-link::before{
+   .active-link::before{
     content: '';
     position: absolute;
     bottom: -.5rem;
@@ -286,7 +288,7 @@
     height: 4px;
     background-color: var(--first-color);
     border-radius: 50%;
-  }  */
+  } 
   
   /* Change background header */
   .scroll-header {
@@ -307,6 +309,12 @@
     .nav__list {
       justify-content: center;
       column-gap: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 767px){
+    .active-link::before{
+      top: 27px;
     }
   }
   
@@ -343,7 +351,7 @@
     }
   
     /* First design, remove if you choose the minimalist design */
-    /* .active-link::before {
+    .active-link::before {
       content: '';
       position: absolute;
       bottom: -.75rem;
@@ -351,7 +359,7 @@
       height: 4px;
       background-color: var(--first-color);
       border-radius: 50%;
-    } */
+    }
   
     /* Minimalist design */
      .active-link::before{
@@ -362,6 +370,7 @@
   /* For large devices */
   @media screen and (min-width: 1024px) {
     .container {
+      /* display: none; */
       margin-left: auto;
       margin-right: auto;
     }
@@ -449,6 +458,7 @@
     font-size: 1rem;
     text-align:inter-word;
     margin-bottom: 2.5rem;
+    font-weight: 600;
     white-space: pre-line;
   }
 
@@ -472,7 +482,7 @@
     padding: 1rem 1.3rem;
     border-radius: 4rem;
     color: #fff;
-    font-weight: var(--body-font);
+    font-weight: 600;
     transition: all 0.3s ease;
   }
   
@@ -559,6 +569,7 @@
     font-size: .9rem;
     text-justify: auto;
     margin-bottom: 2.5rem;
+    font-weight: 600;
     white-space: pre-line;
   }
 
@@ -739,13 +750,18 @@
 
   /* STORE */
 
-
+  #store{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
 
   .store__title > h1{
     font-size: 3rem;
     font-family: var(--body-font);
     color: var(--first-color);    
     text-transform: uppercase;
+    font-weight: 600;
     margin: 0;
   }
 
@@ -771,6 +787,7 @@
 
   .divisor .text{
     font-size: .9rem;
+    font-weight: 600;
     text-transform: uppercase;
   }
 
@@ -813,7 +830,7 @@
   .category_cards{
     display: grid;
     /* padding-top: 4rem; */
-    grid-template-columns: repeat(4,1fr);
+    grid: repeat(1,150px) / auto-flow 150px;
     /* width: 80%; */
     justify-content: center;
     row-gap: 5.5rem;
@@ -875,7 +892,7 @@
   .footer__description,
   .footer__information{
     color: var(--text-color);
-    font-weight: 300;
+    font-weight: 600;
   }
   
   
@@ -956,7 +973,7 @@
   /* ============= RESPONSIVE DESIGN ================= */
 
   /* SMARTPHONE */
-
+ 
   @media screen and (max-width: 767px){
     .nav__list{
       top: 5px;
@@ -967,26 +984,26 @@
     }
 
     .mouse{
-      width: 150px;
+      width: 40%;
       /* top: 20%; */
-      bottom: -15%;
+      bottom: -2%;
       left: 35%;
     }
 
     .headset{
       width: 60%;
-      top: -15%;
-      right: 25%;
+      top: -20%;
+      right: 30%;
     }
 
     .microfono{
-      width: 80%;
+      width: 75%;
       top:5%;
-      right: 5%;
+      right: 10%;
     }
 
     .monitor{
-      width: 55%;
+      width: 50%;
       top: -5%;
       right: 14%;
     }
@@ -1031,12 +1048,12 @@
     }
 
     .home__data{
-      top: -22%;
-      right: -24%;
+      top: -35%;
+      right: -25%;
     }
 
     .about__data{
-      left: -60%;
+     justify-self: center;
     }
 
     .about__data h1{
@@ -1044,12 +1061,16 @@
       
     }
 
+    .about__data p{
+      font-size: .8rem;
+    }
+
     .home__images{
 
       display: flex;
       justify-content: center;
       align-items: center;
-      top: -20%;
+      top: -30%;
       left: -5%;
       
     }
@@ -1058,17 +1079,32 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      left: 2%;
+      bottom: 35%;
     }
 
+    .about__data{
+      transform: translate(5%,-20%);
+    }
 
-    
+    .store__title h1{
+      font-size: 2rem;
+    }
 
+    .store__title h2{
+      font-size: 1.3rem;
+    }
 
-
-
-    .home__data{
+    #store{
       position: relative;
+      height: 125vh;
+      transform: translate(0%,-12%);
     }
+
+    .category_cards{
+      grid: repeat(2,130px) / auto-flow 170px;
+    }
+
   }
   
   
