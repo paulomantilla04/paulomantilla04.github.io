@@ -115,6 +115,29 @@
     }
     
   
+/* =============== VARIABLES DARK THEME ========== */
+  
+body.dark-theme{
+  --first-color: hsl(198,56%,43%);
+  --first-color-alt: hsl(198,56%,33%);
+  --title-color: hsl(198,63%,58%);
+  --title-color-two: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 100%);
+  --body-color: hsl(194,40%,15%);
+  --container-color: hsl(194, 40%, 24%);
+  --circle-store: hsl(194,44%,36%);
+  --circle-store-alt: hsl(194,44%,26%);
+  --icon-store: hsl(198,54%,16%);
+  --icon-store-alt: hsl(198,54%,6%);
+  --text-color-light: hsl(198, 13%, 21%);
+}
+
+/* ==========
+
+
+
+===== */
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
     max-width: 1024px;
@@ -244,7 +267,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 4px;
-    color: var(--title-color);
+    color: var(--text-color);
     font-weight: bold;
   }
 
@@ -261,34 +284,20 @@
     text-transform: uppercase;
   }
 
-  /* .icon__nav{
-    font-size: 1.8rem;
-    position: relative;
-    top: 15px;
-  } */
+  
 
   /*Active link*/
   .active-link {
     position: relative;
-    color: var(--first-color);
+    color: var(--title-color);
     transition: .3s;
   }
 
   .active-link:hover{
-    color: var(--first-color);
+    color: var(--title-color);
   }
   
-  /* Minimalist design, active link  */
-   .active-link::before{
-    content: '';
-    position: absolute;
-    bottom: -.5rem;
-    top: 40px;
-    width: 4px;
-    height: 4px;
-    background-color: var(--first-color);
-    border-radius: 50%;
-  } 
+
   
   /* Change background header */
   .scroll-header {
@@ -351,7 +360,7 @@
     }
   
     /* First design, remove if you choose the minimalist design */
-    .active-link::before {
+    /* .active-link::before {
       content: '';
       position: absolute;
       bottom: -.75rem;
@@ -360,11 +369,11 @@
       background-color: var(--first-color);
       border-radius: 50%;
     }
-  
+   */
     /* Minimalist design */
-     .active-link::before{
+     /* .active-link::before{
         bottom: -.75rem;
-    } 
+    }  */
   }
   
   /* For large devices */
@@ -380,6 +389,65 @@
     font-size: 20px;
     color: var(--title-color);
   }
+
+  /* ============= TOGGLE SWITCH ============ */
+
+/* The switch - the box around the slider */
+/* .switch {
+  display: block;
+  --width-of-switch: 2.1em;
+  --height-of-switch: 1em;
+  --size-of-icon: .8em;
+  --slider-offset: 0.3em;
+  position: relative;
+  transform: translate(4em,-1.2em);
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  --toggle-switch-body: hsl(201, 42%, 70%);
+  background-color: var(--toggle-switch-body);
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ffffff,#ffffff 70%);
+  ;
+ transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+} */
+
 
   /* ============ HOME =========== */
 
@@ -759,7 +827,7 @@
   .store__title > h1{
     font-size: 3rem;
     font-family: var(--body-font);
-    color: var(--first-color);    
+    color: var(--title-color);    
     text-transform: uppercase;
     font-weight: 600;
     margin: 0;
@@ -768,6 +836,7 @@
   .store__title > h2{
     font-size: 2rem;
     font-family: var(--title-font);
+    color: var(--title-color-two);
     text-transform: uppercase;
     margin: 0;
   }
@@ -823,6 +892,7 @@
     font-size: .9rem;
     margin-top: 10px;
     font-weight: 900;
+    color: var(--text-color);
     display: grid;
     place-items: center;
   }
@@ -1107,4 +1177,58 @@
 
   }
   
+  /* TABLET */
+
+  @media screen and (min-width: 767px) and (max-width: 1023px){
+    
+    .home__images{
+      left: -20%;
+    }
+
+    .teclado{
+      left: 71%;
+    }
+
+    .laptop{
+      left: 42%;
+    }
+
+    .letras_powerboost{
+      left: 28%;
+    }
+
+    .elipse{
+      left: 48%;
+    }
+
+    
+
+    .home__data{
+      text-align: center;
+      top: 5%;
+      
+    }
+
+    .about__images{
+      left: 30%;
+    }
+
+
+
+    .about__data{
+      text-align: center;
+      bottom: -15%;
+    }
+  }
+
+/* LAPTOP */
+
+@media screen and (min-width:1024px) {
   
+  .footer__container {
+    position: relative;
+    grid-template-columns: repeat(2,max-content);
+    justify-content: space-between;
+}
+
+}
